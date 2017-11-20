@@ -1,7 +1,6 @@
 'use strict';
 const Ajv = require('ajv'),
       restify = require('restify-errors');
-
 const defaultErrorTransformer = (input, errors) => {
   let result = new restify.BadRequestError('Validation error');
   result.errors = errors;
@@ -28,6 +27,7 @@ module.exports = function(options) {
   let keysToValidate = options.keysToValidate || defaultKeysToValidate;
 
   let ajv = new Ajv(ajvOptions);
+  require('ajv-keywords')(ajv); 
   if (!!ajvTransformer) ajvTransformer(ajv);
 
   return function RestifyAjvMiddleware(req, res, next) {
