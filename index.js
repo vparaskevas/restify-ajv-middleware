@@ -27,7 +27,7 @@ module.exports = function(options) {
   let keysToValidate = options.keysToValidate || defaultKeysToValidate;
 
   let ajv = new Ajv(ajvOptions);
-  require('ajv-keywords')(ajv); 
+  require('ajv-keywords')(ajv, ['typeof', 'instanceof', 'range', 'if', 'switch', 'prohibited', 'deepProperties', 'deepRequired', 'uniqueItemProperties', 'dynamicDefaults']); 
   if (!!ajvTransformer) ajvTransformer(ajv);
 
   return function RestifyAjvMiddleware(req, res, next) {
