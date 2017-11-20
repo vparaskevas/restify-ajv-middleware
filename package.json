@@ -1,6 +1,6 @@
 {
   "name": "restify-ajv-middleware",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "json-schema middleware for restify using ajv for validation.",
   "main": "index.js",
   "scripts": {
@@ -21,8 +21,9 @@
   },
   "homepage": "https://github.com/mbroadst/restify-ajv-middleware#readme",
   "dependencies": {
-    "ajv": "^4.1.0",
-    "restify-errors": "^4.1.0"
+    "ajv": "^5.3.0",
+    "ajv-keywords": "^2.1.1",
+    "restify-errors": "^5.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
